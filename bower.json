@@ -1,0 +1,22 @@
+{
+  "name": "purescript-contravariant",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mankyKitty/purescript-contravariant",
+  "authors": [
+    "Hardy Jones",
+    "Sean Chalmers"
+  ],
+  "description": "Contravariant typeclass for PureScript",
+  "keywords": [
+    "purescript",
+    "contravariant"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
