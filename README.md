@@ -1,4 +1,8 @@
-PureScript Contravariant
-========================
+# Module Documentation
 
-PureScript Contravariant type class.
+## Module Data.Contravariant
+
+### Type Classes
+
+    class Contravariant f where
+      (>$<) :: forall a b. (b -> a) -> f a -> f b
