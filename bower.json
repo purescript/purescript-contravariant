@@ -1,14 +1,15 @@
 {
   "name": "purescript-contravariant",
   "homepage": "https://github.com/purescript/purescript-contravariant",
-  "description": "Contravariant typeclass for PureScript",
+  "description": "Contravariant functors for PureScript",
   "keywords": [
     "purescript",
     "contravariant"
   ],
   "authors": [
     "Hardy Jones <jones3.hardy@gmail.com>",
-    "Sean Chalmers <sclhiannan@gmail.com>"
+    "Sean Chalmers <sclhiannan@gmail.com>",
+    "Gary Burgess <gary.burgess@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -20,4 +21,8 @@
     "Gruntfile.js",
     "package.json"
   ],
+  "dependencies": {
+    "purescript-control": "~0.2.2",
+    "purescript-monoid": "~0.2.0"
+  }
 }
