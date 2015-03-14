@@ -2,7 +2,7 @@ module Data.Equivalence where
 
 import Data.Comparison
 import Data.Function (on)
-import Data.Functor.Contravariant
+import Data.Functor.ContraFunctor
 import Data.Monoid (Monoid, mempty)
 
 -- | An adaptor allowing `>$<` to map over the inputs of an equivalence
@@ -12,7 +12,7 @@ newtype Equivalence a = Equivalence (a -> a -> Boolean)
 runEquivalence :: forall a. Equivalence a -> a -> a -> Boolean
 runEquivalence (Equivalence a) = a
 
-instance contravariantEquivalence :: Contravariant Equivalence where
+instance contraFunctorEquivalence :: ContraFunctor Equivalence where
   (>$<) f (Equivalence g) = Equivalence (g `on` f)
 
 instance semigroupEquivalence :: Semigroup (Equivalence a) where

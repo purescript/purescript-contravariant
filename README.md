@@ -18,10 +18,10 @@ runComparison :: forall a. Comparison a -> a -> a -> Ordering
 ```
 
 
-#### `contravariantComparison`
+#### `contraFunctorComparison`
 
 ``` purescript
-instance contravariantComparison :: Contravariant Comparison
+instance contraFunctorComparison :: ContraFunctor Comparison
 ```
 
 
@@ -67,10 +67,10 @@ runEquivalence :: forall a. Equivalence a -> a -> a -> Boolean
 ```
 
 
-#### `contravariantEquivalence`
+#### `contraFunctorEquivalence`
 
 ``` purescript
-instance contravariantEquivalence :: Contravariant Equivalence
+instance contraFunctorEquivalence :: ContraFunctor Equivalence
 ```
 
 
@@ -105,21 +105,20 @@ comparisonEquivalence :: forall a. Comparison a -> Equivalence a
 An equivalence relation for any `Comparison`.
 
 
-## Module Data.Functor.Contravariant
+## Module Data.Functor.ContraFunctor
 
-#### `Contravariant`
+#### `ContraFunctor`
 
 ``` purescript
-class Contravariant f where
+class ContraFunctor f where
   (>$<) :: forall a b. (b -> a) -> f a -> f b
 ```
 
-A `Contravariant` functor can be seen as a way of changing the input type
-of a consumer of input, in contrast to the standard covariant `Functor`
-that can be seen as a way of changing the output type of a producer of
-output.
+A `ContraFunctor` can be seen as a way of changing the input type of a
+consumer of input, in contrast to the standard covariant `Functor` that
+can be seen as a way of changing the output type of a producer of output.
 
-`Contravariant` instances should satisfy the following laws:
+`ContraFunctor` instances should satisfy the following laws:
 
 - Identity `(>$<) id = id`
 - Composition `(f >$<) <<< (g >$<) = (>$<) (g <<< f)`
@@ -127,7 +126,7 @@ output.
 #### `(>#<)`
 
 ``` purescript
-(>#<) :: forall a b f. (Contravariant f) => f a -> (b -> a) -> f b
+(>#<) :: forall a b f. (ContraFunctor f) => f a -> (b -> a) -> f b
 ```
 
 `(>#<)` is `(>$<)` with its arguments reversed.
@@ -151,8 +150,8 @@ runPredicate :: forall a. Predicate a -> a -> Boolean
 ```
 
 
-#### `contravariantPredicate`
+#### `contraFunctorPredicate`
 
 ``` purescript
-instance contravariantPredicate :: Contravariant Predicate
+instance contraFunctorPredicate :: ContraFunctor Predicate
 ```
