@@ -22,7 +22,6 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-control": "~0.2.2",
-    "purescript-monoid": "~0.2.0"
+    "purescript-monoid": "~0.3.0"
   }
 }
