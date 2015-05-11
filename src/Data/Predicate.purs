@@ -9,4 +9,4 @@ runPredicate :: forall a. Predicate a -> a -> Boolean
 runPredicate (Predicate a) = a
 
 instance contravariantPredicate :: Contravariant Predicate where
-  (>$<) f (Predicate g) = Predicate (g <<< f)
+  cmap f (Predicate g) = Predicate (g <<< f)

@@ -12,13 +12,18 @@
     "Gary Burgess <gary.burgess@gmail.com>"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-contravariant.git"
+  },
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
+    "node_modules",
     "output",
+    "test",
     "bower.json",
-    "Gruntfile.js",
+    "gulpfile.js",
     "package.json"
   ],
   "dependencies": {

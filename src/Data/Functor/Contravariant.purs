@@ -10,7 +10,11 @@ module Data.Functor.Contravariant where
 -- | - Identity `(>$<) id = id`
 -- | - Composition `(f >$<) <<< (g >$<) = (>$<) (g <<< f)`
 class Contravariant f where
-  (>$<) :: forall a b. (b -> a) -> f a -> f b
+  cmap :: forall a b. (b -> a) -> f a -> f b
+
+-- | An infix version of `cmap`.
+(>$<) :: forall a b f. (Contravariant f) => (b -> a) -> f a -> f b
+(>$<) = cmap
 
 -- | `(>#<)` is `(>$<)` with its arguments reversed.
 (>#<) :: forall a b f. (Contravariant f) => f a -> (b -> a) -> f b

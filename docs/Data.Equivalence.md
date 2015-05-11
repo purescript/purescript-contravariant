@@ -1,5 +1,3 @@
-# Module Documentation
-
 ## Module Data.Equivalence
 
 #### `Equivalence`
@@ -7,6 +5,13 @@
 ``` purescript
 newtype Equivalence a
   = Equivalence (a -> a -> Boolean)
+```
+
+##### Instances
+``` purescript
+instance contravariantEquivalence :: Contravariant Equivalence
+instance semigroupEquivalence :: Semigroup (Equivalence a)
+instance monoidEquivalence :: Monoid (Equivalence a)
 ```
 
 An adaptor allowing `>$<` to map over the inputs of an equivalence
@@ -17,28 +22,6 @@ relation.
 ``` purescript
 runEquivalence :: forall a. Equivalence a -> a -> a -> Boolean
 ```
-
-
-#### `contravariantEquivalence`
-
-``` purescript
-instance contravariantEquivalence :: Contravariant Equivalence
-```
-
-
-#### `semigroupEquivalence`
-
-``` purescript
-instance semigroupEquivalence :: Semigroup (Equivalence a)
-```
-
-
-#### `monoidEquivalence`
-
-``` purescript
-instance monoidEquivalence :: Monoid (Equivalence a)
-```
-
 
 #### `defaultEquivalence`
 
@@ -55,6 +38,5 @@ comparisonEquivalence :: forall a. Comparison a -> Equivalence a
 ```
 
 An equivalence relation for any `Comparison`.
-
 
 

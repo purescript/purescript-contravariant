@@ -11,10 +11,10 @@ runComparison :: forall a. Comparison a -> a -> a -> Ordering
 runComparison (Comparison a) = a
 
 instance contravariantComparison :: Contravariant Comparison where
-  (>$<) f (Comparison g) = Comparison (g `on` f)
+  cmap f (Comparison g) = Comparison (g `on` f)
 
 instance semigroupComparison :: Semigroup (Comparison a) where
-  (<>) (Comparison p) (Comparison q) = Comparison (p <> q)
+  append (Comparison p) (Comparison q) = Comparison (p <> q)
 
 instance monoidComparison :: Monoid (Comparison a) where
   mempty = Comparison (\_ _ -> EQ)
