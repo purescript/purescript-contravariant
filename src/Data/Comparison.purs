@@ -1,5 +1,7 @@
 module Data.Comparison where
 
+import Prelude
+
 import Data.Function (on)
 import Data.Functor.Contravariant
 import Data.Monoid (Monoid, mempty)

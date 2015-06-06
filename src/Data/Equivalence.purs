@@ -1,5 +1,7 @@
 module Data.Equivalence where
 
+import Prelude
+
 import Data.Comparison
 import Data.Function (on)
 import Data.Functor.Contravariant

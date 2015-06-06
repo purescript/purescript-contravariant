@@ -1,5 +1,7 @@
 module Data.Predicate where
 
+import Prelude
+
 import Data.Functor.Contravariant
 
 -- | An adaptor allowing `>$<` to map over the inputs of a predicate.
