@@ -7,15 +7,15 @@ newtype Equivalence a
   = Equivalence (a -> a -> Boolean)
 ```
 
+An adaptor allowing `>$<` to map over the inputs of an equivalence
+relation.
+
 ##### Instances
 ``` purescript
 instance contravariantEquivalence :: Contravariant Equivalence
 instance semigroupEquivalence :: Semigroup (Equivalence a)
 instance monoidEquivalence :: Monoid (Equivalence a)
 ```
-
-An adaptor allowing `>$<` to map over the inputs of an equivalence
-relation.
 
 #### `runEquivalence`
 

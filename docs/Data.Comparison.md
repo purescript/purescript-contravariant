@@ -7,14 +7,14 @@ newtype Comparison a
   = Comparison (a -> a -> Ordering)
 ```
 
+An adaptor allowing `>$<` to map over the inputs of a comparison function.
+
 ##### Instances
 ``` purescript
 instance contravariantComparison :: Contravariant Comparison
 instance semigroupComparison :: Semigroup (Comparison a)
 instance monoidComparison :: Monoid (Comparison a)
 ```
-
-An adaptor allowing `>$<` to map over the inputs of a comparison function.
 
 #### `runComparison`
 
