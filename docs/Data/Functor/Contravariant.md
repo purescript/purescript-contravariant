@@ -23,6 +23,8 @@ output.
 (>$<) :: forall a b f. (Contravariant f) => (b -> a) -> f a -> f b
 ```
 
+_left-associative / precedence -1_
+
 An infix version of `cmap`.
 
 #### `(>#<)`
@@ -30,6 +32,8 @@ An infix version of `cmap`.
 ``` purescript
 (>#<) :: forall a b f. (Contravariant f) => f a -> (b -> a) -> f b
 ```
+
+_left-associative / precedence -1_
 
 `(>#<)` is `(>$<)` with its arguments reversed.
 
