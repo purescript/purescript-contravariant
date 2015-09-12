@@ -84,7 +84,7 @@ instance decideOp :: (Semigroup r) => Decide (Op r)
 
 ``` purescript
 class (Decide f, Divisible f) <= Decidable f where
-  lose :: forall a b c. (forall r. a -> r) -> f a
+  lose :: forall a. (forall r. a -> r) -> f a
 ```
 
 `Decidable` is the contravariant analogue of `Alternative`.

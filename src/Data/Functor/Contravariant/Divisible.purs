@@ -87,7 +87,7 @@ class (Divide f) <= Decide f where
   
 -- | `Decidable` is the contravariant analogue of `Alternative`.
 class (Decide f, Divisible f) <= Decidable f where
-  lose :: forall a b c. (forall r. a -> r) -> f a  
+  lose :: forall a. (forall r. a -> r) -> f a
 
 -- | `decided = decide id`
 decided :: forall f a b. (Decide f) => f a -> f b -> f (Either a b)
