@@ -2,10 +2,10 @@ module Data.Equivalence where
 
 import Prelude
 
-import Data.Comparison
+import Data.Comparison (Comparison(..))
 import Data.Function (on)
-import Data.Functor.Contravariant
-import Data.Monoid (Monoid, mempty)
+import Data.Functor.Contravariant (Contravariant)
+import Data.Monoid (Monoid)
 
 -- | An adaptor allowing `>$<` to map over the inputs of an equivalence
 -- | relation.

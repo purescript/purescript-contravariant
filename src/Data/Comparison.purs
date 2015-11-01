@@ -3,8 +3,8 @@ module Data.Comparison where
 import Prelude
 
 import Data.Function (on)
-import Data.Functor.Contravariant
-import Data.Monoid (Monoid, mempty)
+import Data.Functor.Contravariant (Contravariant)
+import Data.Monoid (Monoid)
 
 -- | An adaptor allowing `>$<` to map over the inputs of a comparison function.
 newtype Comparison a = Comparison (a -> a -> Ordering)
