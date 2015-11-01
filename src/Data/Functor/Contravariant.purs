@@ -1,7 +1,5 @@
 module Data.Functor.Contravariant where
 
-import Prelude
-
 -- | A `Contravariant` functor can be seen as a way of changing the input type
 -- | of a consumer of input, in contrast to the standard covariant `Functor`
 -- | that can be seen as a way of changing the output type of a producer of

@@ -1,14 +1,14 @@
 -- | This module defines the opposite of the function category, `Op` and its instances.
-module Data.Op 
+module Data.Op
   ( Op(..)
   , runOp
   ) where
 
 import Prelude
 
-import Data.Monoid
-import Data.Functor.Contravariant
-      
+import Data.Monoid (Monoid, mempty)
+import Data.Functor.Contravariant (Contravariant)
+
 -- | The opposite of the function category.
 newtype Op a b = Op (b -> a)
 
