@@ -1,11 +1,13 @@
 module Data.Equivalence where
 
-import Prelude
-
+import Data.BooleanAlgebra ((&&))
 import Data.Comparison (Comparison(..))
+import Data.Eq (class Eq, eq, (==))
 import Data.Function (on)
-import Data.Functor.Contravariant (Contravariant)
-import Data.Monoid (Monoid)
+import Data.Functor.Contravariant (class Contravariant)
+import Data.Monoid (class Monoid)
+import Data.Ordering (Ordering(..))
+import Data.Semigroup (class Semigroup)
 
 -- | An adaptor allowing `>$<` to map over the inputs of an equivalence
 -- | relation.
@@ -24,7 +26,7 @@ instance monoidEquivalence :: Monoid (Equivalence a) where
   mempty = Equivalence (\_ _ -> true)
 
 -- | The default equivalence relation for any values with an `Eq` instance.
-defaultEquivalence :: forall a. (Eq a) => Equivalence a
+defaultEquivalence :: forall a. Eq a => Equivalence a
 defaultEquivalence = Equivalence eq
 
 -- | An equivalence relation for any `Comparison`.

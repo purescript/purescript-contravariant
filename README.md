@@ -12,12 +12,6 @@ Contravariant functors.
 bower install purescript-contravariant
 ```
 
-## Module documentation
+## Documentation
 
-- [Data.Functor.Contravariant](docs/Data/Functor/Contravariant.md)
-
-### Contramap adaptors
-
-- [Data.Comparison](docs/Data/Comparison.md)
-- [Data.Equivalence](docs/Data/Equivalence.md)
-- [Data.Predicate](docs/Data/Predicate.md)
+Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-contravariant).
