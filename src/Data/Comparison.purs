@@ -1,10 +1,11 @@
 module Data.Comparison where
 
-import Prelude
-
+import Data.Comparison (Comparison(..))
 import Data.Function (on)
-import Data.Functor.Contravariant (Contravariant)
-import Data.Monoid (Monoid)
+import Data.Functor.Contravariant (class Contravariant)
+import Data.Monoid (class Monoid)
+import Data.Ord (class Ord, Ordering(..), compare)
+import Data.Semigroup (class Semigroup, (<>))
 
 -- | An adaptor allowing `>$<` to map over the inputs of a comparison function.
 newtype Comparison a = Comparison (a -> a -> Ordering)
@@ -22,5 +23,5 @@ instance monoidComparison :: Monoid (Comparison a) where
   mempty = Comparison (\_ _ -> EQ)
 
 -- | The default comparison for any values with an `Ord` instance.
-defaultComparison :: forall a. (Ord a) => Comparison a
+defaultComparison :: forall a. Ord a => Comparison a
 defaultComparison = Comparison compare
