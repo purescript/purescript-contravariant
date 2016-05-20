@@ -1,6 +1,6 @@
 module Data.Equivalence where
 
-import Data.BooleanAlgebra ((&&))
+import Data.HeytingAlgebra ((&&))
 import Data.Comparison (Comparison(..))
 import Data.Eq (class Eq, eq, (==))
 import Data.Function (on)

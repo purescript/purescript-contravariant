@@ -2,10 +2,10 @@ module Data.Divide where
 
 import Control.Category (id)
 
-import Data.BooleanAlgebra ((&&))
 import Data.Comparison (Comparison(..))
 import Data.Equivalence (Equivalence(..))
 import Data.Functor.Contravariant (class Contravariant)
+import Data.HeytingAlgebra ((&&))
 import Data.Op (Op(..))
 import Data.Predicate (Predicate(..))
 import Data.Semigroup (class Semigroup, (<>))

@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "purescript-either": "^1.0.0-rc.1",
-    "purescript-monoid": "^1.0.0-rc.1",
-    "purescript-tuples": "^1.0.0-rc.1"
+    "purescript-monoid": "^1.0.0-rc.2",
+    "purescript-tuples": "^1.0.0-rc.2"
   }
 }
