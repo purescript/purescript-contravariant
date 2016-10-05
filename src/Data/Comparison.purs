@@ -1,17 +1,17 @@
 module Data.Comparison where
 
+import Prelude
+
 import Data.Comparison (Comparison(..))
 import Data.Function (on)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Monoid (class Monoid)
-import Data.Ord (class Ord, Ordering(..), compare)
-import Data.Semigroup (class Semigroup, (<>))
+import Data.Newtype (class Newtype)
 
 -- | An adaptor allowing `>$<` to map over the inputs of a comparison function.
 newtype Comparison a = Comparison (a -> a -> Ordering)
 
-runComparison :: forall a. Comparison a -> a -> a -> Ordering
-runComparison (Comparison a) = a
+derive instance newtypeComparison :: Newtype (Comparison a) _
 
 instance contravariantComparison :: Contravariant Comparison where
   cmap f (Comparison g) = Comparison (g `on` f)

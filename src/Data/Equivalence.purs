@@ -1,20 +1,18 @@
 module Data.Equivalence where
 
-import Data.HeytingAlgebra ((&&))
+import Prelude
+
 import Data.Comparison (Comparison(..))
-import Data.Eq (class Eq, eq, (==))
 import Data.Function (on)
 import Data.Functor.Contravariant (class Contravariant)
 import Data.Monoid (class Monoid)
-import Data.Ordering (Ordering(..))
-import Data.Semigroup (class Semigroup)
+import Data.Newtype (class Newtype)
 
 -- | An adaptor allowing `>$<` to map over the inputs of an equivalence
 -- | relation.
 newtype Equivalence a = Equivalence (a -> a -> Boolean)
 
-runEquivalence :: forall a. Equivalence a -> a -> a -> Boolean
-runEquivalence (Equivalence a) = a
+derive instance newtypeEquivalence :: Newtype (Equivalence a) _
 
 instance contravariantEquivalence :: Contravariant Equivalence where
   cmap f (Equivalence g) = Equivalence (g `on` f)

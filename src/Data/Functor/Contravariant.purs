@@ -1,7 +1,6 @@
 module Data.Functor.Contravariant where
 
-import Data.Functor (class Functor, (<$>))
-import Data.Void (absurd)
+import Prelude
 
 -- | A `Contravariant` functor can be seen as a way of changing the input type
 -- | of a consumer of input, in contrast to the standard covariant `Functor`
