@@ -1,14 +1,13 @@
 module Data.Decide where
 
+import Prelude
+
 import Data.Comparison (Comparison(..))
 import Data.Divide (class Divide)
 import Data.Either (Either(..), either)
 import Data.Equivalence (Equivalence(..))
-import Data.Function (id, (<<<))
 import Data.Op (Op(..))
-import Data.Ordering (Ordering(..))
 import Data.Predicate (Predicate(..))
-import Data.Semigroup (class Semigroup)
 
 -- | `Decide` is the contravariant analogue of `Alt`.
 class Divide f <= Decide f where

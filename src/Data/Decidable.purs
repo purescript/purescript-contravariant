@@ -1,14 +1,14 @@
 module Data.Decidable where
 
+import Prelude
+
 import Data.Comparison (Comparison(..))
 import Data.Decide (class Decide)
 import Data.Divisible (class Divisible)
 import Data.Equivalence (Equivalence(..))
-import Data.Function (id)
 import Data.Monoid (class Monoid)
 import Data.Op (Op(..))
 import Data.Predicate (Predicate(..))
-import Data.Void (Void, absurd)
 
 -- | `Decidable` is the contravariant analogue of `Alternative`.
 class (Decide f, Divisible f) <= Decidable f where

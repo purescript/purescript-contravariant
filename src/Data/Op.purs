@@ -1,16 +1,14 @@
 module Data.Op where
 
-import Control.Category (class Category, id)
-import Control.Semigroupoid (class Semigroupoid, compose, (<<<))
+import Prelude
 
 import Data.Functor.Contravariant (class Contravariant)
+import Data.Newtype (class Newtype)
 
 -- | The opposite of the function category.
 newtype Op a b = Op (b -> a)
 
--- | Unpack a value of type `Op a b`, revealing a function.
-runOp :: forall a b. Op a b -> b -> a
-runOp (Op op) = op
+derive instance newtypeOp :: Newtype (Op a b) _
 
 instance semigroupoidOp :: Semigroupoid Op where
   compose (Op f) (Op g) = Op (compose g f)
