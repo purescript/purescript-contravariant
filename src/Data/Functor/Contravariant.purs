@@ -20,7 +20,7 @@ infixl 4 cmap as >$<
 cmapFlipped :: forall a b f. Contravariant f => f a -> (b -> a) -> f b
 cmapFlipped x f = f >$< x
 
-infixl 4 cmap as >#<
+infixl 4 cmapFlipped as >#<
 
 coerce :: forall f a b. (Contravariant f, Functor f) => f a -> f b
 coerce a = absurd <$> (absurd >$< a)
