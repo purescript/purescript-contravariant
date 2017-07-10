@@ -10,5 +10,9 @@ newtype Predicate a = Predicate (a -> Boolean)
 
 derive instance newtypePredicate :: Newtype (Predicate a) _
 
+derive newtype instance heytingAlgebraPredicate :: HeytingAlgebra (Predicate a)
+
+derive newtype instance booleanAlgebraPredicate :: BooleanAlgebra (Predicate a)
+
 instance contravariantPredicate :: Contravariant Predicate where
   cmap f (Predicate g) = Predicate (g <<< f)
