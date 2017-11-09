@@ -18,3 +18,9 @@ instance categoryOp :: Category Op where
 
 instance contravariantOp :: Contravariant (Op a) where
   cmap f (Op g) = Op (g <<< f)
+
+instance semigroupOp :: (Semigroup a) => Semigroup (Op a b) where
+  append (Op f) (Op g) = Op (f <> g)
+
+instance monoidOp :: (Monoid a) => Monoid (Op a b) where
+  mempty = Op (const mempty)
