@@ -3,6 +3,7 @@ module Data.Op where
 import Prelude
 
 import Data.Functor.Contravariant (class Contravariant)
+import Data.Monoid (class Monoid, mempty)
 import Data.Newtype (class Newtype)
 
 -- | The opposite of the function category.
@@ -23,4 +24,4 @@ instance semigroupOp :: (Semigroup a) => Semigroup (Op a b) where
   append (Op f) (Op g) = Op (f <> g)
 
 instance monoidOp :: (Monoid a) => Monoid (Op a b) where
-  mempty = Op (const mempty)
+  mempty = Op mempty
