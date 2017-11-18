@@ -10,6 +10,8 @@ import Data.Newtype (class Newtype)
 newtype Op a b = Op (b -> a)
 
 derive instance newtypeOp :: Newtype (Op a b) _
+derive newtype instance semigroupOp ∷ (Semigroup a) ⇒ Semigroup (Op a b)
+derive newtype instance monoidOp :: (Monoid a) => Monoid (Op a b)
 
 instance semigroupoidOp :: Semigroupoid Op where
   compose (Op f) (Op g) = Op (compose g f)
@@ -19,9 +21,3 @@ instance categoryOp :: Category Op where
 
 instance contravariantOp :: Contravariant (Op a) where
   cmap f (Op g) = Op (g <<< f)
-
-instance semigroupOp :: (Semigroup a) => Semigroup (Op a b) where
-  append (Op f) (Op g) = Op (f <> g)
-
-instance monoidOp :: (Monoid a) => Monoid (Op a b) where
-  mempty = Op mempty
