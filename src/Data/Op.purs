@@ -3,7 +3,7 @@ module Data.Op where
 import Prelude
 
 import Data.Functor.Contravariant (class Contravariant)
-import Data.Monoid (class Monoid, mempty)
+import Data.Monoid (class Monoid)
 import Data.Newtype (class Newtype)
 
 -- | The opposite of the function category.
