@@ -9,8 +9,8 @@ import Prelude
 -- |
 -- | `Contravariant` instances should satisfy the following laws:
 -- |
--- | - Identity `(>$<) id = id`
--- | - Composition `(f >$<) <<< (g >$<) = (>$<) (g <<< f)`
+-- | - Identity `cmap id = id`
+-- | - Composition `cmap f <<< cmap g = cmap (g <<< f)`
 class Contravariant f where
   cmap :: forall a b. (b -> a) -> f a -> f b
 
@@ -24,3 +24,7 @@ infixl 4 cmapFlipped as >#<
 
 coerce :: forall f a b. Contravariant f => Functor f => f a -> f b
 coerce a = absurd <$> (absurd >$< a)
+
+-- | As all `Contravariant` functors are also trivially `Invariant`, this function can be used as the `imap` implementation for any types that have an existing `Contravariant` instance.
+imapC :: forall f a b. Contravariant f => (a -> b) -> (b -> a) -> f a -> f b
+imapC _ f = cmap f
