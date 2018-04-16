@@ -14,7 +14,7 @@ instance semigroupoidOp :: Semigroupoid Op where
   compose (Op f) (Op g) = Op (compose g f)
 
 instance categoryOp :: Category Op where
-  id = Op id
+  identity = Op identity
 
 instance contravariantOp :: Contravariant (Op a) where
   cmap f (Op g) = Op (g <<< f)

@@ -39,4 +39,4 @@ instance chooseOp :: Semigroup r => Decide (Op r) where
 
 -- | `chosen = choose id`
 chosen :: forall f a b. Decide f => f a -> f b -> f (Either a b)
-chosen = choose id
+chosen = choose identity

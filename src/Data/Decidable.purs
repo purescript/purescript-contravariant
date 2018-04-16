@@ -6,7 +6,6 @@ import Data.Comparison (Comparison(..))
 import Data.Decide (class Decide)
 import Data.Divisible (class Divisible)
 import Data.Equivalence (Equivalence(..))
-import Data.Monoid (class Monoid)
 import Data.Op (Op(..))
 import Data.Predicate (Predicate(..))
 
@@ -27,4 +26,4 @@ instance decidableOp :: Monoid r => Decidable (Op r) where
   lose f = Op \a -> absurd (f a)
 
 lost :: forall f. Decidable f => f Void
-lost = lose id
+lost = lose identity
