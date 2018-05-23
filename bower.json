@@ -1,8 +1,7 @@
 {
   "name": "purescript-contravariant",
   "homepage": "https://github.com/purescript/purescript-contravariant",
-  "description": "Contravariant functors for PureScript",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/purescript/purescript-contravariant.git"
@@ -17,7 +16,9 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-either": "#compiler/0.12",
-    "purescript-tuples": "#compiler/0.12"
+    "purescript-either": "^4.0.0",
+    "purescript-newtype": "^3.0.0",
+    "purescript-prelude": "^4.0.0",
+    "purescript-tuples": "^5.0.0"
   }
 }
