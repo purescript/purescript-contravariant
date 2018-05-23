@@ -5,7 +5,6 @@ import Prelude
 import Data.Comparison (Comparison(..))
 import Data.Function (on)
 import Data.Functor.Contravariant (class Contravariant)
-import Data.Monoid (class Monoid)
 import Data.Newtype (class Newtype)
 
 -- | An adaptor allowing `>$<` to map over the inputs of a comparison function.

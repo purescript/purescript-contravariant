@@ -5,7 +5,6 @@ import Prelude
 import Data.Comparison (Comparison(..))
 import Data.Divide (class Divide)
 import Data.Equivalence (Equivalence(..))
-import Data.Monoid (class Monoid, mempty)
 import Data.Op (Op(..))
 import Data.Predicate (Predicate(..))
 
