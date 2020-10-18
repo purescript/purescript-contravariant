@@ -5,6 +5,7 @@ import Prelude
 import Data.Comparison (Comparison(..))
 import Data.Equivalence (Equivalence(..))
 import Data.Functor.Contravariant (class Contravariant)
+import Data.On (On(..))
 import Data.Op (Op(..))
 import Data.Predicate (Predicate(..))
 import Data.Tuple (Tuple(..))
@@ -23,15 +24,10 @@ import Data.Tuple (Tuple(..))
 class Contravariant f <= Divide f where
   divide :: forall a b c. (a -> Tuple b c) -> f b -> f c -> f a
 
-instance divideComparison :: Divide Comparison where
-  divide f (Comparison g) (Comparison h) = Comparison \a b -> case f a of
+instance divideOn :: Semigroup m => Divide (On m) where
+  divide f (On g) (On h) = On \a b -> case f a of
     Tuple a' a'' -> case f b of
       Tuple b' b'' -> g a' b' <> h a'' b''
-
-instance divideEquivalence :: Divide Equivalence where
-  divide f (Equivalence g) (Equivalence h) = Equivalence \a b -> case f a of
-    Tuple a' a'' -> case f b of
-      Tuple b' b'' -> g a' b' && h a'' b''
 
 instance dividePredicate :: Divide Predicate where
   divide f (Predicate g) (Predicate h) = Predicate \a -> case f a of
