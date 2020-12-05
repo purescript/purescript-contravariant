@@ -1,14 +1,14 @@
 # purescript-contravariant
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-contravariant.svg)](https://github.com/purescript/purescript-contravariant/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-contravariant.svg?branch=master)](https://travis-ci.org/purescript/purescript-contravariant)
+[![Build status](https://github.com/purescript/purescript-contravariant/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-contravariant/actions?query=workflow%3ACI+branch%3Amaster)
 
 Contravariant functors.
 
 ## Installation
 
 ```
-bower install purescript-contravariant
+spago install contravariant
 ```
 
 ## Documentation
