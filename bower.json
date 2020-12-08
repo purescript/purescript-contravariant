@@ -16,9 +16,9 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-either": "^4.0.0",
-    "purescript-newtype": "^3.0.0",
-    "purescript-prelude": "^4.0.0",
-    "purescript-tuples": "^5.0.0"
+    "purescript-either": "master",
+    "purescript-newtype": "master",
+    "purescript-prelude": "master",
+    "purescript-tuples": "master"
   }
 }
