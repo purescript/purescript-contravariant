@@ -2,6 +2,8 @@ module Data.Functor.Contravariant where
 
 import Prelude
 
+import Data.Const (Const(..))
+
 -- | A `Contravariant` functor can be seen as a way of changing the input type
 -- | of a consumer of input, in contrast to the standard covariant `Functor`
 -- | that can be seen as a way of changing the output type of a producer of
@@ -28,3 +30,6 @@ coerce a = absurd <$> (absurd >$< a)
 -- | As all `Contravariant` functors are also trivially `Invariant`, this function can be used as the `imap` implementation for any types that have an existing `Contravariant` instance.
 imapC :: forall f a b. Contravariant f => (a -> b) -> (b -> a) -> f a -> f b
 imapC _ f = cmap f
+
+instance contravariantConst :: Contravariant (Const a) where
+  cmap _ (Const x) = Const x
