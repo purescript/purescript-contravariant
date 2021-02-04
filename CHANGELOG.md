@@ -14,6 +14,7 @@ Bugfixes:
 Other improvements:
   - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#27)
   - Added a CHANGELOG.md file and pull request template (#28, #29)
+  - This package now depends on the `purescript-const` package, and contains an instance previously in that package (#30)
 
 ## [v4.0.1](https://github.com/purescript/purescript-contravariant/releases/tag/v4.0.1) - 2019-04-27
 

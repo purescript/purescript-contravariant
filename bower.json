@@ -16,6 +16,7 @@
     "package.json"
   ],
   "dependencies": {
+    "purescript-const": "master",
     "purescript-either": "master",
     "purescript-newtype": "master",
     "purescript-prelude": "master",
