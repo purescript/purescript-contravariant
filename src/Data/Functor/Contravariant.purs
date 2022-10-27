@@ -33,3 +33,21 @@ imapC _ f = cmap f
 
 instance contravariantConst :: Contravariant (Const a) where
   cmap _ (Const x) = Const x
+
+cflap :: forall a f b. Contravariant f => f b -> a -> f (a -> b)
+cflap ff x  = (\f -> f x) >$< ff
+
+infixl 4 cflap as >@<
+
+cvoid :: forall a f. Contravariant f => f Unit -> f a
+cvoid = cmap (const unit)
+
+cvoidRight :: forall a b f. Contravariant f => a -> f a -> f b
+cvoidRight x = cmap (const x)
+
+infixl 4 cvoidRight as >$
+
+cvoidLeft :: forall a b f. Contravariant f => f a -> a -> f b
+cvoidLeft f x = cmap (const x) f
+
+infixl 4 cvoidLeft as $<
