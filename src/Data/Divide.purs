@@ -44,3 +44,5 @@ instance divideOp :: Semigroup r => Divide (Op r) where
 -- | `divided = divide id`
 divided :: forall f a b. Divide f => f a -> f b -> f (Tuple a b)
 divided = divide identity
+
+infixr 5 divided as >*<
