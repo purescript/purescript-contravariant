@@ -9,7 +9,7 @@ import Data.Newtype (class Newtype)
 newtype Op a b = Op (b -> a)
 
 derive instance newtypeOp :: Newtype (Op a b) _
-derive newtype instance semigroupOp :: Semigroup a ⇒ Semigroup (Op a b)
+derive newtype instance semigroupOp :: Semigroup a => Semigroup (Op a b)
 derive newtype instance monoidOp :: Monoid a => Monoid (Op a b)
 
 instance semigroupoidOp :: Semigroupoid Op where
