@@ -2,7 +2,7 @@
 
 Notable changes to this project are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased](https://github.com/purescript/purescript-contravariant/compare/v6.0.1...HEAD)
 
 Breaking changes:
 
@@ -12,9 +12,22 @@ Bugfixes:
 
 Other improvements:
 
+## [v6.0.1](https://github.com/purescript/purescript-contravariant/releases/tag/v6.0.1) - 2026-10-17
+
+Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+- Migrate from Bower/Pulp to Spago and update CI and formatting tools (#38 by @thomashoneyman)
+
 ## [v6.0.0](https://github.com/purescript/purescript-contravariant/releases/tag/v6.0.0) - 2022-04-27
 
 Breaking changes:
+
 - Update project and deps to PureScript v0.15.0 (#33 by @JordanMartinez)
 
 New features:
@@ -26,16 +39,18 @@ Other improvements:
 ## [v5.0.0](https://github.com/purescript/purescript-contravariant/releases/tag/v5.0.0) - 2021-02-26
 
 Breaking changes:
-  - Added support for PureScript 0.14 and dropped support for all previous versions (#25)
+
+- Added support for PureScript 0.14 and dropped support for all previous versions (#25)
 
 New features:
 
 Bugfixes:
 
 Other improvements:
-  - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#27)
-  - Added a CHANGELOG.md file and pull request template (#28, #29)
-  - This package now depends on the `purescript-const` package, and contains an instance previously in that package (#30)
+
+- Migrated CI to GitHub Actions and updated installation instructions to use Spago (#27)
+- Added a CHANGELOG.md file and pull request template (#28, #29)
+- This package now depends on the `purescript-const` package, and contains an instance previously in that package (#30)
 
 ## [v4.0.1](https://github.com/purescript/purescript-contravariant/releases/tag/v4.0.1) - 2019-04-27
 
@@ -105,4 +120,3 @@ Initial release candidate of the library intended for the 0.7 compiler.
 - Moved to `Data.Functor.Contravariant`
 - Added `(>#<)`
 - Added `Predicate`, `Equivalence`, `Comparison`
-
